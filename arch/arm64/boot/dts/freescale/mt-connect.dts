@@ -136,7 +136,7 @@
 			reset-assert-us = <1000>;
 			/* RESET_N signal rise time ~100ms */
 			reset-deassert-us = <120000>;
-			phy-reset-gpios = <&gpio5 4 GPIO_ACTIVE_LOW>;
+			reset-gpios = <&gpio5 4 GPIO_ACTIVE_LOW>;
 		};
 	};
 };
