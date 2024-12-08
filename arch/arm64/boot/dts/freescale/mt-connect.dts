@@ -130,13 +130,15 @@
 		ethphy: ethernet-phy@1 {
 			compatible = "ethernet-phy-id0022.1642",
 			"ethernet-phy-ieee802.3-c22";
+			pinctrl-0 = <&pinctrl_ethphy>;
+			pinctrl-names = "default";
 			interrupt-parent = <&gpio5>;
 			interrupts = <3 IRQ_TYPE_LEVEL_LOW>;
 			reg = <1>;
 			reset-assert-us = <1000>;
-			/* RESET_N signal rise time ~100ms */
-			reset-deassert-us = <120000>;
+			reset-deassert-us = <1000>;
 			reset-gpios = <&gpio5 4 GPIO_ACTIVE_LOW>;
+			status = "okay";
 		};
 	};
 };
@@ -382,8 +384,7 @@
 			<MX8MM_IOMUXC_ENET_TD2_ENET1_RGMII_TD2		0x1f>,
 			<MX8MM_IOMUXC_ENET_TD3_ENET1_RGMII_TD3		0x1f>,
 			<MX8MM_IOMUXC_ENET_TXC_ENET1_RGMII_TXC		0x1f>,
-			<MX8MM_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f>,
-			<MX8MM_IOMUXC_GPIO1_IO10_GPIO1_IO10		0x146>;
+			<MX8MM_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f>;
 	};
 
 	pinctrl_fec1_sleep: fec1-sleepgrp {
@@ -401,10 +402,15 @@
 			<MX8MM_IOMUXC_ENET_TD2_GPIO1_IO19		0x1f>,
 			<MX8MM_IOMUXC_ENET_TD3_GPIO1_IO18		0x1f>,
 			<MX8MM_IOMUXC_ENET_TXC_GPIO1_IO23		0x1f>,
-			<MX8MM_IOMUXC_ENET_TX_CTL_GPIO1_IO22		0x1f>,
-			<MX8MM_IOMUXC_GPIO1_IO10_GPIO1_IO10		0x106>;
+			<MX8MM_IOMUXC_ENET_TX_CTL_GPIO1_IO22		0x1f>;
 	};
 
+	pinctrl_ethphy: dhcom-ethphy-grp {
+		fsl,pins = <
+			MX8MM_IOMUXC_SPDIF_TX_GPIO5_IO3			0x1c4
+			MX8MM_IOMUXC_SPDIF_RX_GPIO5_IO4			0x1c4
+		>;
+	};
 
 	pinctrl_ir: irgrp {
 		fsl,pins = <
