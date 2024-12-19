@@ -54,6 +54,17 @@
 		regulator-max-microvolt = <3300000>;
 	};
 
+	leds {
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_led>;
+
+		led-1 {
+			label = "ETH_GB_SEL";
+			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
 };
 
 &A53_0 {
