@@ -56,8 +56,6 @@
 
 	leds {
 		compatible = "gpio-leds";
-		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_led>;
 
 		led-1 {
 			label = "ETH_GB_SEL";
