@@ -106,6 +106,18 @@
 		};
 	};
 
+	pwm-leds {
+		compatible = "pwm-leds";
+
+		led-1 {
+			label = "PWM_MEMBRANE";
+			function = LED_FUNCTION_STATUS;
+			max-brightness = <248>;
+			pwms = <&pwm1 0 50000 0>;
+		};
+	};
+
+
 	sw_keys {
 		compatible = "gpio-keys";
 
@@ -330,6 +342,12 @@
 };
 
 &snvs_pwrkey {
+	status = "okay";
+};
+
+&pwm1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_pwm_led>;
 	status = "okay";
 };
 
@@ -574,6 +592,12 @@
 	pinctrl_backlight: backlightgrp {
 		fsl,pins = <
 		MX8MM_IOMUXC_GPIO1_IO01_PWM1_OUT	0x06
+		>;
+	};
+
+	pinctrl_pwm_led: pwmledgrp {
+		fsl,pins = <
+		MX8MM_IOMUXC_SPDIF_EXT_CLK_PWM1_OUT	0x16
 		>;
 	};
 };
