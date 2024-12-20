@@ -5,6 +5,7 @@
 
 /dts-v1/;
 
+#include <dt-bindings/leds/common.h>
 #include <dt-bindings/usb/pd.h>
 #include "imx8mm.dtsi"
 
@@ -60,6 +61,48 @@
 		led-1 {
 			label = "ETH_GB_SEL";
 			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-2 {
+			label = "LED1_GREEN";
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-3 {
+			label = "LED2_GREEN";
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-4 {
+			label = "LED3_GREEN";
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-5 {
+			label = "LED4_DUAL_GREEN";
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-6 {
+			label = "LED4_DUAL_YELLOW";
+			color = <LED_COLOR_ID_YELLOW>;
+			gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-7 {
+			label = "LED5_DUAL_GREEN";
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+		};
+
+		led-8 {
+			label = "LED5_DUAL_RED";
+			color = <LED_COLOR_ID_RED>;
+			gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
