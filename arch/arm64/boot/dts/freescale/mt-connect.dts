@@ -63,6 +63,18 @@
 		};
 	};
 
+	sw_keys {
+		compatible = "gpio-keys";
+
+		sw1: volume_mute {
+			label = "Volume Mute";
+			gpios = <&gpio4 30 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_MUTE>;
+			interrupt-parent = <&gpio4>;
+			interrupts = <30 IRQ_TYPE_LEVEL_LOW>;
+		};
+	};
+
 };
 
 &A53_0 {
