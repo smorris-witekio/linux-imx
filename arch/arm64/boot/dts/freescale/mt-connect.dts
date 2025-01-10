@@ -297,11 +297,11 @@
 	sda-gpios = <&gpio5 17 GPIO_ACTIVE_HIGH>;
 	status = "okay";
 
-	ak4458: ak4458@10 {
+	ak4458: ak4458@19 {
 		#sound-dai-cells = <0>;
 		sound-name-prefix = "0";
 		compatible = "asahi-kasei,ak4458";
-		reg = <0x10>;
+		reg = <0x19>;
 		resets = <&ak4458_reset>;
 		AVDD-supply = <&reg_ldo_vcc>;
 		DVDD-supply = <&reg_ldo_vcc>;
