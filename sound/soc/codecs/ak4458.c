@@ -632,6 +632,7 @@ static struct snd_soc_dai_driver ak4497_dai = {
 
 static void ak4458_reset(struct ak4458_priv *ak4458, bool active)
 {
+	dev_emerg(ak4458->dev, "SAMSAM: %s: %i\n", __func__,__LINE__);
 	if (ak4458->reset_gpiod) {
 		gpiod_set_value_cansleep(ak4458->reset_gpiod, active);
 		usleep_range(2000, 3000);
@@ -642,6 +643,7 @@ static void ak4458_reset(struct ak4458_priv *ak4458, bool active)
 			reset_control_deassert(ak4458->reset);
 		usleep_range(2000, 3000);
 	}
+	dev_emerg(ak4458->dev, "SAMSAM: %s: %i\n", __func__,__LINE__);
 }
 
 #ifdef CONFIG_PM
@@ -743,6 +745,7 @@ static int ak4458_i2c_probe(struct i2c_client *i2c)
 	int ret, i;
 	int reg;
 
+	dev_emerg(ak4458->dev, "SAMSAM: %s: %i\n", __func__,__LINE__);
 	ak4458 = devm_kzalloc(&i2c->dev, sizeof(*ak4458), GFP_KERNEL);
 	if (!ak4458)
 		return -ENOMEM;
@@ -803,6 +806,7 @@ static int ak4458_i2c_probe(struct i2c_client *i2c)
 		return -ENODEV;
 	}
 
+	dev_emerg(ak4458->dev, "SAMSAM: %s: %i\n", __func__,__LINE__);
 	return 0;
 }
 
