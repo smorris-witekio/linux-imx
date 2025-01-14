@@ -300,6 +300,20 @@
 };
 
 &gpio4 {
+	hp-dac-pdn-n {
+		gpio-hog;
+		gpios = <28 GPIO_ACTIVE_LOW>;
+		output-low;
+		line-name = "HP_DAC_PDN_N";
+	};
+
+	hp-dac-i2c-fil {
+		gpio-hog;
+		gpios = <30 GPIO_ACTIVE_HIGH>;
+		output-high;
+		line-name = "HP_DAC_I2CFIL";
+	};
+
 	gpio-line-names = "", "", "", "", "", "", "", "",
 		"", "", "", "", "", "", "", "",
 		"", "", "", "", "", "", "", "",
