@@ -300,6 +300,11 @@
 };
 
 &gpio4 {
+	gpio-line-names = "", "", "", "", "", "", "", "",
+		"", "", "", "", "", "", "", "",
+		"", "", "", "", "", "", "", "",
+		"", "", "", "", "HP_DAC_PDN_N", "", "HP_DAC_I2CFIL", "";
+
 	hp-dac-pdn-n {
 		gpio-hog;
 		gpios = <28 GPIO_ACTIVE_LOW>;
@@ -313,11 +318,6 @@
 		output-high;
 		line-name = "HP_DAC_I2CFIL";
 	};
-
-	gpio-line-names = "", "", "", "", "", "", "", "",
-		"", "", "", "", "", "", "", "",
-		"", "", "", "", "", "", "", "",
-		"", "", "", "", "HP_DAC_PDN_N", "", "HP_DAC_I2CFIL", "";
 };
 
 &gpio5 {
