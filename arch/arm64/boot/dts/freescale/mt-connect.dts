@@ -279,8 +279,8 @@
 };
 
 &gpio1 {
-	gpio-line-names = "", "", "", "", "", "", "ETH_GB_SEL", "",
-		"", "", "USB1_OTG_ID", "USB2_OTG_ID", "", "", "", "",
+	gpio-line-names = "", "PWM_MEMBRANE", "", "", "", "", "ETH_GB_SEL", "",
+		"LED1_GREEN", "LED2_GREEN", "LED3_GREEN", "LED4_DUAL_YELLOW", "LED5_DUAL_RED", "LED4_DUAL_GREEN", "LED5_DUAL_GREEN", "",
 		"", "", "", "", "", "", "", "",
 		"", "", "", "", "", "", "", "";
 };
