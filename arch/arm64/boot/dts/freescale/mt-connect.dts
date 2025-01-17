@@ -323,6 +323,19 @@
 	status = "okay";
 };
 
+&sai3 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_sai3>;
+	clock-names = "bus", "mclk1", "mclk2", "mclk3";
+	/* the DAI should select the sysclk */
+	clocks = <&clk IMX8MM_CLK_SAI3_IPG>, /* using internal bus clock */
+		<&clk IMX8MM_CLK_DUMMY>,
+		<&clk IMX8MM_CLK_DUMMY>,
+		<&clk IMX8MM_CLK_DUMMY>;
+	/* using default config: tx is async, rx synchronized to tx clock */
+	status = "okay";
+};
+
 &snvs_pwrkey {
 	status = "okay";
 };
