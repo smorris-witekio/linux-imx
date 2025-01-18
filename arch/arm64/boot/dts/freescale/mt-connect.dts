@@ -297,40 +297,40 @@
 		/* connect xtal input as source of pll0 and pll1 */
 		silabs,pll-source = <0 0>, <1 0>;
 
-		clkout0 { /*DANTE_OSC_SCLK*/
-			reg = <0>;
+		/* clkout0 { /\*DANTE_OSC_SCLK*\/ */
+			/* reg = <0>; */
 			/* silabs,drive-strength = <8>; */
 			/* silabs,multisynth-source = <0>; */
 			/* silabs,clock-source = <1>; */
-		};
+		/* }; */
 
-		clkout1 { /*DANTE_OSC_LRCLK*/
-			reg = <1>;
+		/* clkout1 { /\*DANTE_OSC_LRCLK*\/ */
+			/* reg = <1>; */
 			/* silabs,drive-strength = <8>; */
 			/* silabs,multisynth-source = <1>; */
 			/* silabs,clock-source = <1>; */
-		};
+		/* }; */
 
-		clkout2 { /*DANTE_OSC_MCLK*/
-			reg = <2>;
+		/* clkout2 { /\*DANTE_OSC_MCLK*\/ */
+			/* reg = <2>; */
 			/* silabs,drive-strength = <8>; */
 			/* silabs,multisynth-source = <2>; */
 			/* silabs,clock-source = <1>; */
-		};
+		/* }; */
 
-		clkout3 { /*DANTE_COUNTER_FB*/
-			reg = <3>;
+		/* clkout3 { /\*DANTE_COUNTER_FB*\/ */
+			/* reg = <3>; */
 			/* silabs,drive-strength = <8>; */
 			/* silabs,multisynth-source = <3>; */
 			/* silabs,clock-source = <1>; */
-		};
+		/* }; */
 
-		clkout4 { /*ETH_CLK_25M*/
-			reg = <4>;
+		/* clkout4 { /\*ETH_CLK_25M*\/ */
+			/* reg = <4>; */
 			/* silabs,drive-strength = <8>; */
 			/* silabs,multisynth-source = <4>; */
 			/* silabs,clock-source = <0>; */
-		};
+		/* }; */
 	};
 };
 
