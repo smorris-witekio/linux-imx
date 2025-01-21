@@ -329,10 +329,17 @@ static int si5351_vxco_set_rate(struct clk_hw *hw, unsigned long rate,
 	return 0;
 }
 
+static int si5351_vxco_determine_rate(struct clk_hw *hw,
+				      struct clk_rate_request *req)
+{
+	return 0;
+}
+
 static const struct clk_ops si5351_vxco_ops = {
 	.prepare = si5351_vxco_prepare,
 	.unprepare = si5351_vxco_unprepare,
 	.recalc_rate = si5351_vxco_recalc_rate,
+	.determine_rate = si5351_vxco_determine_rate,
 	.set_rate = si5351_vxco_set_rate,
 };
 
