@@ -293,6 +293,7 @@
 		/* connect xtal input to 25MHz reference */
 		clocks = <&ref27>;
 		clock-names = "xtal";
+		silabs,pll-source = <0 0>, <1 0>;
 
 		clkout0 { /*DANTE_OSC_SCLK*/
 			reg = <0>;
