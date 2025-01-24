@@ -282,59 +282,6 @@
 	scl-gpios = <&gpio5 16 GPIO_ACTIVE_HIGH>;
 	sda-gpios = <&gpio5 17 GPIO_ACTIVE_HIGH>;
 	status = "okay";
-
-	si5351b: clock-generator@60 {
-		compatible = "silabs,si5351b";
-		reg = <0x60>;
-		#address-cells = <1>;
-		#size-cells = <0>;
-		#clock-cells = <1>;
-
-		/* connect xtal input to 25MHz reference */
-		clocks = <&ref27>;
-		clock-names = "xtal";
-		silabs,pll-source = <0 0>, <1 0>;
-
-		clkout0 { /*DANTE_OSC_SCLK*/
-			reg = <0>;
-			clock-frequency = <12288000>;
-			silabs,multisynth-source = <0>;
-			silabs,drive-strength = <8>;
-			silabs,clock-source = <0>;
-		};
-
-		clkout1 { /*DANTE_OSC_LRCLK*/
-			reg = <1>;
-			clock-frequency = <48000>;
-			silabs,multisynth-source = <0>;
-			silabs,drive-strength = <8>;
-			silabs,clock-source = <0>;
-		};
-
-		clkout2 { /*DANTE_OSC_MCLK*/
-			reg = <2>;
-			clock-frequency = <24576000>;
-			silabs,drive-strength = <8>;
-			silabs,multisynth-source = <0>;
-			silabs,clock-source = <0>;
-		};
-
-		clkout3 { /*DANTE_COUNTER_FB*/
-			reg = <3>;
-			clock-frequency = <10000000>;
-			silabs,drive-strength = <8>;
-			silabs,multisynth-source = <0>;
-			silabs,clock-source = <0>;
-		};
-
-		clkout4 { /*ETH_CLK_25M*/
-			reg = <4>;
-			clock-frequency = <25000000>;
-			silabs,drive-strength = <8>;
-			silabs,multisynth-source = <0>;
-			silabs,clock-source = <0>;
-		};
-	};
 };
 
 &gpio1 {
@@ -388,7 +335,7 @@
 	clock-names = "bus", "mclk1", "mclk2", "mclk3";
 	/* the DAI should select the sysclk */
 	clocks = <&clk IMX8MM_CLK_SAI3_IPG>, /* using internal bus clock */
-		<&si5351b 2>, /* DANTE_OSC_MCLK */
+		<&clk IMX8MM_CLK_DUMMY>,
 		<&clk IMX8MM_CLK_DUMMY>,
 		<&clk IMX8MM_CLK_DUMMY>;
 	/* using default config: tx is async, rx synchronized to tx clock */
